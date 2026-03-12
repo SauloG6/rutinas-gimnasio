@@ -1,0 +1,62 @@
+# ###########################################
+# EPN - BÚNKER DE SEGURIDAD Y EFICIENCIA
+# .gitignore para Node.js y Angular 17+
+# ###########################################
+
+# 1. Dependencias (¡CRÍTICO!)
+node_modules/
+jspm_packages/
+web_modules/
+
+# 2. Angular v17+ specific
+.angular/
+dist/
+tmp/
+/src/app/gifs/components/registro-detalle-modal/tmp/ # Si creas tmp locales
+
+# 3. Secretos y Configuración Local (¡SEGURIDAD!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Ignorar environment específico si es necesario
+# /src/environments/environment.development.ts
+
+# 4. Logs de npm/yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# 5. Herramientas y Editor (Contexto image_2.png)
+.vscode/
+# Si quieres compartir config de equipo en VS Code, descomenta la siguiente línea:
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 6. Pruebas y Cobertura
+coverage/
+.nyc_output/
+
+# 7. OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 8. Varios
+.lock-wscript
+build/Release
