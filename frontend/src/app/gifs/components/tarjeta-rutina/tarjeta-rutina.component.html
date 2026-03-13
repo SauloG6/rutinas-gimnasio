@@ -1,0 +1,46 @@
+<section class="p-4 mb-6"> <select (change)="onSeleccionarRutina($event)" class="p-3 bg-[#25282e] text-white rounded-lg border border-gray-700 w-full max-w-sm">
+    <option disabled selected>
+      Selecciona la rutina
+    </option>
+    @for (rutina of rutinas(); track rutina.id_rutina) {
+      <option [value]="rutina.id_rutina">
+        {{rutina.nombre_rutina}}
+      </option>
+    }
+  </select>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+
+  @for (ejercicio of plan(); track ejercicio.id_ejercicio) {
+    <article class="p-6 bg-[#25282e] border-2 border-[#b9ff00] rounded-3xl shadow-lg transform transition-all hover:scale-105 flex flex-col justify-between h-full">
+
+      <header class="mb-4">
+        <h2 class="text-3xl font-bold text-white mb-1 uppercase tracking-wider">
+          {{ ejercicio.nombre_ejercicio }}
+        </h2>
+        <p class="text-gray-400 text-lg">
+          {{ ejercicio.nombre_rutina }}
+        </p>
+      </header>
+
+      <main class="mb-8 space-y-1.5 text-gray-300">
+        <p class="text-xl">
+          3 Series / 10-12 Reps
+        </p>
+        <p class="text-gray-500 font-mono">
+          Last: 80 kg
+        </p>
+      </main>
+
+      <footer>
+        <button class="w-full h-16 bg-[#b9ff00] text-[#1c1d22] font-extrabold text-2xl rounded-full flex items-center justify-center gap-2 transition-colors hover:bg-white active:scale-95">
+          <span class="text-4xl">+</span>
+          REGISTRAR
+        </button>
+      </footer>
+
+    </article>
+  }
+
+</section>

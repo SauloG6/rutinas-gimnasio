@@ -1,0 +1,19 @@
+<!--
+Aqui va el header
+-->
+
+<main class="bg-[#25282e]">
+  <!--Ingresar el nombre de la rutina -->
+  <!--Tarjeta-->
+  <!--Nombre rutina
+      Cargo todas las rutinas de la senial-->
+  <tarjeta-rutina
+    [rutinas]="rutinasService.rutinas()"
+    [plan]="planificadorService.plan()"
+    (rutinaSeleccionada) = "planificadorService.cargarPlan($event)"
+    />
+
+</main>
+
+<!--Footer-->>
+
